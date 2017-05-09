@@ -1,0 +1,32 @@
+﻿@model IEnumerable<UnitedGameDevelopment.Models.ViewModels.JobApplications.JobApplicationVm>
+ 
+@if (@Model.Any())
+{
+    <table class="table row-seperator">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Published</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var job in Model)
+            {
+                <tr>
+                    <th scope="row">@job.Id</th>
+                    <td>@Html.ActionLink(@job.Title, "Details", "JobApplications", new {area = "", id = @job.Id }, null)</td>
+                    <td>@job.PublishDate</td>
+                    <td>@Html.ActionLink("Edit Application", "Edit", "JobApplications", new { area = "", id = job.Id }, new { @class = "btn btn-primary" })</td>
+                    <td>@Html.ActionLink("Delete Application", "Delete", "JobApplications", new { area = "", id = job.Id }, new { @class = "btn btn-danger" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h2 class="text-center row-seperator" style="margin-bottom: 200px">No applications created yet.</h2>
+}

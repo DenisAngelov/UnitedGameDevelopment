@@ -1,0 +1,30 @@
+﻿@model IEnumerable<UnitedGameDevelopment.Models.ViewModels.Manage.FreelancerUserVm>
+
+@if (@Model.Count() != 0)
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Freelancer Name</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var freelancerUser in Model)
+            {
+                <tr>
+                    <th scope="row">@freelancerUser.Id</th>
+                    <td>@freelancerUser.FreelancerName</td>
+                    <td>@Html.ActionLink("Delete Freelancer", "DeleteFreelancer", "Admin", new { id = @freelancerUser.Id }, null)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+else
+{
+    <h2 class="text-center">No Freelancer users are created yet.</h2>
+}

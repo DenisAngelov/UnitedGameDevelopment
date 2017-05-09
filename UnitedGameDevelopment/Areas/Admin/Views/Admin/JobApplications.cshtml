@@ -1,0 +1,11 @@
+﻿@model IEnumerable<UnitedGameDevelopment.Models.ViewModels.JobApplications.JobApplicationVm>
+@{
+    ViewBag.Title = "JobApplications";
+}
+
+
+<h2 class="text-center row-seperator">Job Applications</h2>
+
+<div class="container">
+    @Html.Partial("_EditableJobApplications", @Model)
+</div>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    @Html.Partial("_NavBar")
+    <div class="container-fluid body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="row" id="footer">
+                <div class="col-md-3 col-md-offset-1">
+                    <h4>Sections</h4>
+                    <p>@Html.ActionLink("Home", "Index", "Home")</p>
+                    <p>@Html.ActionLink("Projects", "Projects", "Project")</p>
+                    <p>@Html.ActionLink("Job Applications", "JobApplications", "JobApplications")</p>
+                </div>
+                
+                <div class="col-md-3 col-md-offset-1">
+                    <h4>Info</h4>
+                    <p>All Rights Reserved</p>
+                    <p>United Game Developtment</p>
+                    <p>Adress: New York, Time Square</p>
+                </div>
+                
+                <div class="col-md-3 col-md-offset-1">
+                    <h4>Contact Us</h4>
+                    <p>Twitter</p>
+                    <p>Facebook</p>
+                    <p>Instagram</p>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

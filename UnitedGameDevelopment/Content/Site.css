@@ -1,0 +1,105 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.row-seperator {
+    margin-top: 100px;
+}
+
+#homeHeader {
+    background-color: #607D9D;
+    height: 500px;
+}
+
+#homeHeader h1 {
+    margin: 50px 0px 50px 0px;
+    font-size: 35px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#homeHeader p {
+    margin-top: 150px;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+#homeHeader img {
+    max-height: 500px;
+}
+
+#workDone span {
+    color: #5DC26A;
+}
+
+#workDone h2, h3 {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.benefit {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+#projectStart img {
+    max-height: 100px;
+    margin: 70px 0px 20px 35px;
+}
+
+.pro-man-titles {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.heading {
+    font-size: 50px;
+}
+
+.details-title {
+    margin-bottom: 30px; 
+    font-size: 50px;
+}
+
+.details-properties {
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 40px;
+}
+
+.skill-required {
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #222222;
+}
+#footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #ffffff;
+}

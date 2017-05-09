@@ -1,0 +1,24 @@
+﻿@model IEnumerable<UnitedGameDevelopment.Models.ViewModels.Projects.ProjectVm>
+<table class="table row-seperator">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Published</th>
+            <th>Project Funds</th>
+            <th>Company Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var project in Model)
+        {
+            <tr>
+                <th scope="row">@project.Id</th>
+                <td>@Html.ActionLink(@project.Title, "Details", "Project", new { id = @project.Id }, null)</td>
+                <td>@project.PublishDate</td>
+                <td>@project.Budjet</td>
+                <td>@project.CompanyName</td>
+            </tr>
+        }
+    </tbody>
+</table>

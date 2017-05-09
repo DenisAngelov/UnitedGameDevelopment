@@ -1,0 +1,76 @@
+﻿@model UnitedGameDevelopment.Models.ViewModels.Pagination.PaginationProjectVm
+@{
+    ViewBag.Title = "Projects";
+}
+
+<h2 class="text-center row-seperator">Browse Projects</h2>
+
+<div class="container">
+
+    <div id="project-content">
+        @Html.Partial("_DisplayProjects", @Model.Items)
+    </div>
+
+    @if (Model.Pager.EndPage > 1)
+    {
+        <ul class="pagination">
+            @if (Model.Pager.CurrentPage > 1)
+            {
+                <li>
+                    @Ajax.ActionLink("First", "Projects", "Project", null, new AjaxOptions()
+               {
+                   HttpMethod = "get",
+                   UpdateTargetId = "project-content",
+                   InsertionMode = InsertionMode.Replace,
+                   AllowCache = true
+               })
+                </li>
+
+                <li>
+                    @Ajax.ActionLink("Previous", "Projects", "Project", new { page = @Model.Pager.CurrentPage - 1 }, new AjaxOptions()
+                   {
+                       HttpMethod = "get",
+                       UpdateTargetId = "project-content",
+                       InsertionMode = InsertionMode.Replace,
+                       AllowCache = true
+                   })
+                </li>
+            }
+
+            @for (var page = Model.Pager.StartPage; page <= Model.Pager.EndPage; page++)
+                {
+                <li class="@(page == Model.Pager.CurrentPage ? "active" : "")">
+                    @Ajax.ActionLink(@page.ToString(), "Projects", "Project", new { page = @page }, new AjaxOptions()
+               {
+                   HttpMethod = "get",
+                   UpdateTargetId = "project-content",
+                   InsertionMode = InsertionMode.Replace,
+                   AllowCache = true
+               })
+                </li>
+            }
+
+            @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+                {
+                <li>
+                    @Ajax.ActionLink("Next", "Projects", "Project", new { page = @Model.Pager.CurrentPage + 1 }, new AjaxOptions()
+               {
+                   HttpMethod = "get",
+                   UpdateTargetId = "project-content",
+                   InsertionMode = InsertionMode.Replace,
+                   AllowCache = true
+               })
+                </li>
+                <li>
+                    @Ajax.ActionLink("Last", "Projects", "Project", new { page = @Model.Pager.TotalPages }, new AjaxOptions()
+                   {
+                       HttpMethod = "get",
+                       UpdateTargetId = "project-content",
+                       InsertionMode = InsertionMode.Replace,
+                       AllowCache = true
+                   })
+                </li>
+            }
+        </ul>
+    }
+</div>

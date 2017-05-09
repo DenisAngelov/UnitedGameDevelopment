@@ -1,0 +1,72 @@
+﻿@model UnitedGameDevelopment.Models.ViewModels.JobApplications.JobApplicationVm
+
+@{
+    ViewBag.Title = "Details " + @Model.Title;
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+            <h4>Job Application @Html.DisplayFor(model => model.Title), Freelancer @Html.DisplayFor(model => model.FreelancerName)</h4>
+            <p>Published: @Html.DisplayFor(model => model.PublishDate)</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center details-title">@Html.DisplayFor(model => model.Title)</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-1 details-properties">
+            <p>Job Application Description:</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-1">
+            <p>@Html.DisplayFor(model => model.Description)</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-1 details-properties">
+            <p>Skills I have:</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-1">
+            @if (String.IsNullOrEmpty(@Model.SkillsAcquired))
+            {
+                <p>@Model.SkillsAcquired</p>
+            }
+            else
+            {
+                foreach (var skill in @Model.SkillsAcquired.Split(','))
+                {
+                    <p class="skill-required">- @skill</p>
+                }
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-1 details-properties">
+            <p>Salary Per Hour:</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-1">
+            <p>@Html.DisplayFor(model => model.SalaryPerHour) $</p>
+        </div>
+    </div>
+    
+    <div class="row row-seperator">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="btn btn-success">Contact Us</div>
+        }
+        else
+        {
+            <h3>These contact details are only visible to registered users.</h3>
+        }
+    </div>
+</div>

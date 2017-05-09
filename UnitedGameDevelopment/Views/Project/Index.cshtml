@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-center heading">Project Page Manager</h2>
+
+<div class="container">
+    <div class="row row-seperator">
+        <div class="col-md-3">
+            <img src="~/Content/images/browse-projects.png" class="img-responsive"/>
+            <h3 class="text-center">@Html.ActionLink("Browse Projects", "Projects", "Project", null, new { @class = "pro-man-titles" })</h3>
+        </div>
+        <div class="col-md-3 col-md-offset-1">
+            <img src="~/Content/images/create-project.png" class="img-responsive" />
+            <h3 class="text-center">@Html.ActionLink("Create a new Project", "Create", "Project", null, new { @class = "pro-man-titles" })</h3>
+        </div>
+        <div class="col-md-3 col-md-offset-1">
+            <img src="~/Content/images/my-projects.png" class="img-responsive"/>
+            <h3 class="text-center">@Html.ActionLink("My Projects", "MyProjects", "Project", null, new { @class = "pro-man-titles" })</h3>
+        </div>
+    </div>
+</div>

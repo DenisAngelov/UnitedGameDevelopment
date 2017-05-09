@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Job Application Manager";
+}
+
+<h2 class="text-center heading">Job Application Manager</h2>
+
+<div class="container">
+    <div class="row row-seperator">
+        <div class="col-md-3">
+            <img src="~/Content/images/browse-projects.png" class="img-responsive" />
+            <h3 class="text-center">@Html.ActionLink("Browse Job Applications", "JobApplications", "JobApplications", null, new { @class = "pro-man-titles" })</h3>
+        </div>
+        <div class="col-md-3 col-md-offset-1">
+            <img src="~/Content/images/create-project.png" class="img-responsive" />
+            <h3 class="text-center">@Html.ActionLink("Create a new Job Application", "Create", "JobApplications", null, new { @class = "pro-man-titles" })</h3>
+        </div>
+        <div class="col-md-3 col-md-offset-1">
+            <img src="~/Content/images/my-projects.png" class="img-responsive" />
+            <h3 class="text-center">@Html.ActionLink("My Job Applications", "MyJobApplications", "JobApplications", null, new { @class = "pro-man-titles" })</h3>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+﻿@model IEnumerable<UnitedGameDevelopment.Models.ViewModels.Manage.CompanyUsersVm>
+@{
+    ViewBag.Title = "Company Users";
+}
+
+<h1 class="text-center">Company Users</h1>
+
+<div class="container">
+    @Html.Partial("_EditableCompanyUsers", @Model)
+</div>

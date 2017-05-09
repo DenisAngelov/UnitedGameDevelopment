@@ -1,0 +1,24 @@
+﻿@model IEnumerable<UnitedGameDevelopment.Models.ViewModels.JobApplications.JobApplicationVm>
+<table class="table row-seperator">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Published</th>
+            <th>Salary Per Hour</th>
+            <th>Freelancer Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var job in Model)
+        {
+            <tr>
+                <th scope="row">@job.Id</th>
+                <td>@Html.ActionLink(@job.Title, "Details", "Project", new { id = @job.Id }, null)</td>
+                <td>@job.PublishDate</td>
+                <td>@job.SalaryPerHour</td>
+                <td>@job.FreelancerName</td>
+            </tr>
+        }
+    </tbody>
+</table>

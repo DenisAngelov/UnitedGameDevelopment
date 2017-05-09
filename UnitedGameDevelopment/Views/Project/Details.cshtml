@@ -1,0 +1,72 @@
+﻿@model UnitedGameDevelopment.Models.ViewModels.Projects.ProjectVm
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+            <h4>Project @Html.DisplayFor(model => model.Title), Company @Html.DisplayFor(model => model.CompanyName)</h4>
+            <p>Published: @Html.DisplayFor(model => model.PublishDate)</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center details-title">@Html.DisplayFor(model => model.Title)</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-1 details-properties">
+            <p>Project Description:</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-1">
+            <p>@Html.DisplayFor(model => model.Description)</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-1 details-properties">
+            <p>Skills Required:</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-1">
+            @if (String.IsNullOrEmpty(@Model.SkillsRequired))
+            {
+                <p>@Model.SkillsRequired</p>
+            }
+            else
+            {
+                foreach (var skill in @Model.SkillsRequired.Split(','))
+                {
+                    <p class="skill-required">- @skill</p>
+                }
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-1 details-properties">
+            <p>Project Budjet:</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-1">
+            <p>@Html.DisplayFor(model => model.Budjet) $</p>
+        </div>
+    </div>
+    <div class="row row-seperator">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="btn btn-success btn-lg col-md-offset-1">Contact Us</div>
+        }
+        else
+        {
+            <h3 class="col-md-offset-1">These contact details are only visible to registered users.</h3>
+        }
+    </div>
+</div>

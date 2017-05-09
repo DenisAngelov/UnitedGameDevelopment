@@ -1,0 +1,30 @@
+﻿@model IEnumerable<UnitedGameDevelopment.Models.ViewModels.Manage.CompanyUsersVm>
+
+@if (@Model.Count() != 0)
+{
+   
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Company Name</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var companyUser in Model)
+            {
+                <tr>
+                    <th scope="row">@companyUser.Id</th>
+                    <td>@companyUser.CompanyName</td>
+                    <td>@Html.ActionLink("Delete Company", "DeleteCompany", "Admin", new {id = @companyUser.Id}, null)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+}
+else
+{
+    <h2 class="text-center">No company users are created yet.</h2>
+}

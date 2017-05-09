@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Admin Managment";
+}
+
+<h2 class="text-center heading">Admin Managment</h2>
+
+<div class="container">
+    <div class="row row-seperator">
+        <div class="col-md-2">
+            <img src="~/Content/images/browse-projects.png" class="img-responsive" />
+            <h3 class="text-center">@Html.ActionLink("Manage Job Applications", "JobApplications", "Admin", null, new { @class = "pro-man-titles" })</h3>
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+            <img src="~/Content/images/create-project.png" class="img-responsive" />
+            <h3 class="text-center">@Html.ActionLink("Manage Projects", "Projects", "Admin", null, new { @class = "pro-man-titles" })</h3>
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+            <img src="~/Content/images/my-projects.png" class="img-responsive" />
+            <h3 class="text-center">@Html.ActionLink("Manage Company Users", "CompanyUsers", "Admin", null, new { @class = "pro-man-titles" })</h3>
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+            <img src="~/Content/images/my-projects.png" class="img-responsive" />
+            <h3 class="text-center">@Html.ActionLink("Manage Freelancer User", "FreelancerUsers", "Admin", null, new { @class = "pro-man-titles" })</h3>
+        </div>
+    </div>
+</div>

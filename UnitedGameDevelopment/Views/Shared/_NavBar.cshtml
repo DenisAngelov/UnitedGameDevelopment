@@ -1,0 +1,42 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("United Game Development", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                
+                @if (User.IsInRole("Admin"))
+                {
+                    <li>@Html.ActionLink("Admin Managment", "Index", "Admin", new { Area = "Admin" }, new { })</li>
+                    <li>@Html.ActionLink("Freelancer Users", "FreelancerUsers", "Admin", new { Area = "Admin" }, new { })</li>
+                    <li>@Html.ActionLink("Company Users", "CompanyUsers", "Admin", new { Area = "Admin" }, new { })</li>
+                    <li>@Html.ActionLink("Job Applications", "JobApplications", "Admin", new { Area = "Admin" }, new { })</li>
+                    <li>@Html.ActionLink("Projects", "Projects", "Admin", new { Area = "Admin" }, new { })</li>
+                }
+                else if (User.IsInRole("Company"))
+                {
+                    <li>@Html.ActionLink("Projects", "Index", "Project")</li>
+                    <li>@Html.ActionLink("Freelancer Applications", "JobApplications", "JobApplications")</li>
+                }
+                else if (User.IsInRole("Freelancer"))
+                {
+                    <li>@Html.ActionLink("Projects", "Projects", "Project")</li>
+                    <li>@Html.ActionLink("Freelancer Applications", "Index", "JobApplications")</li>
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Projects", "Projects", "Project")</li>
+                    <li>@Html.ActionLink("Freelancer Applications", "JobApplications", "JobApplications")</li>
+                }
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+</div>
