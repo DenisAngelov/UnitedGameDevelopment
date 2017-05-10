@@ -6,7 +6,6 @@
             <th>Title</th>
             <th>Published</th>
             <th>Project Funds</th>
-            <th>Company Name</th>
         </tr>
     </thead>
     <tbody>
@@ -17,7 +16,6 @@
                 <td>@Html.ActionLink(@project.Title, "Details", "Project", new { id = @project.Id }, null)</td>
                 <td>@project.PublishDate</td>
                 <td>@project.Budjet</td>
-                <td>@project.Company.CompanyName</td>
             </tr>
         }
     </tbody>
