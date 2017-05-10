@@ -9,7 +9,7 @@
         public string Description { get; set; }
         public string SkillsRequired { get; set; }
         public decimal Budjet { get; set; }
-        public string CompanyName { get; set; }
+        public Company Company { get; set; }
         public DateTime PublishDate { get; set; }
     }
 }

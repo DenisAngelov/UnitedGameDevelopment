@@ -55,7 +55,7 @@
         public void CreateJobApplication(JobApplicationBm bind, Freelancer freelancer)
         {
             JobApplication ja = Mapper.Map<JobApplicationBm, JobApplication>(bind);
-            ja.FreelancerName = freelancer.FreelancerName;
+            ja.Freelancer = freelancer;
             ja.PublishDate = DateTime.Now;
             freelancer.JobApplications.Add(ja);
             this.Context.JobApplications.Add(ja);
@@ -72,7 +72,6 @@
             this.Context.SaveChanges();
         }
 
-        //delete from freelancer list
         public void DeleteApplication(JobApplication jobApp)
         {
             this.Context.JobApplications.Remove(jobApp);

@@ -67,7 +67,7 @@
             if (this.ModelState.IsValid)
             {
                 this.service.CreateProject(bind, this.service.GetCompany(User.Identity.Name));
-                return RedirectToAction("Projects");
+                return this.RedirectToAction("Projects");
             }
 
             return this.View(bind);

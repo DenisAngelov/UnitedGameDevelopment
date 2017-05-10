@@ -2,10 +2,11 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using EntityModels;
 
     public class JobApplicationBm
     {
-        public string FreelancerName { get; set; }
+        public Freelancer Freelancer { get; set; }
         [Required]
         [StringLength(100, ErrorMessage = "Title must be between 5 and 100 charcters.", MinimumLength = 5)]
         public string Title { get; set; }

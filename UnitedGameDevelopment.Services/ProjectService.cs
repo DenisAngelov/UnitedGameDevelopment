@@ -53,8 +53,8 @@
         {
             Project project = Mapper.Map<ProjectBm, Project>(bind);
             project.PublishDate = DateTime.Now;
-            project.CompanyName = company.CompanyName;
-            company.Projects.Add(project);
+            project.Company = company;
+            //company.Projects.Add(project);
             this.Context.Projects.Add(project);
             this.Context.SaveChanges();
         }

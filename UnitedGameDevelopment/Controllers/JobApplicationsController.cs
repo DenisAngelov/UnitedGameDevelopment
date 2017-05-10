@@ -64,7 +64,7 @@
                 return RedirectToAction("JobApplications");
             }
 
-            return this.View();
+            return this.View(bind);
         }
 
         [HttpGet, Route("edit-application/{id}")]

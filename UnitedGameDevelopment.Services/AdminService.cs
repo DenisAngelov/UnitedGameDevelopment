@@ -1,6 +1,7 @@
 ﻿namespace UnitedGameDevelopment.Services
 {
     using System.Collections.Generic;
+    using System.Runtime.Remoting.Contexts;
     using AutoMapper;
     using Models.EntityModels;
     using Models.ViewModels.JobApplications;
@@ -51,6 +52,9 @@
 
         public void DeleteCompany(Company company)
         {
+            foreach (var project in company.Projects)
+                this.Context.Projects.Remove(project);
+
             this.Context.Companies.Remove(company);
             this.Context.SaveChanges();
         }
@@ -62,6 +66,9 @@
 
         public void DeleteFreelancer(Freelancer freelancer)
         {
+            foreach (var jobApp in freelancer.JobApplications)
+                this.Context.JobApplications.Remove(jobApp);
+
             this.Context.Freelancers.Remove(freelancer);
             this.Context.SaveChanges();
         }

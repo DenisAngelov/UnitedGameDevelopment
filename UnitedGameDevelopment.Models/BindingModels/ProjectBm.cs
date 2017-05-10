@@ -2,9 +2,11 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using EntityModels;
 
     public class ProjectBm
     {
+        public Company Company { get; set; }
         [Required]
         [StringLength(100, ErrorMessage = "Title must be between 5 and 100 charcters.", MinimumLength = 5)]
         public string Title { get; set; }
@@ -17,7 +19,6 @@
         [Required]
         [Range(0, 200000, ErrorMessage = "Budjet can't be a negative number.")]
         public decimal Budjet { get; set; }
-        public string CompanyName { get; set; }
         public DateTime PublishDate { get; set; }
     }
 }

@@ -6,7 +6,6 @@
             <th>Title</th>
             <th>Published</th>
             <th>Salary Per Hour</th>
-            <th>Freelancer Name</th>
         </tr>
     </thead>
     <tbody>
@@ -14,10 +13,9 @@
         {
             <tr>
                 <th scope="row">@job.Id</th>
-                <td>@Html.ActionLink(@job.Title, "Details", "Project", new { id = @job.Id }, null)</td>
+                <td>@Html.ActionLink(@job.Title, "Details", "JobApplications", new { id = @job.Id }, null)</td>
                 <td>@job.PublishDate</td>
                 <td>@job.SalaryPerHour</td>
-                <td>@job.FreelancerName</td>
             </tr>
         }
     </tbody>
